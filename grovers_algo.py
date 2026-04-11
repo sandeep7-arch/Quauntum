@@ -2,18 +2,21 @@ from qiskit import QuantumCircuit, transpile
 from qiskit_aer import Aer
 
 qc = QuantumCircuit(3, 3)
-
+//creating superpostion
 qc.h([0, 1, 2])
-
+//disguising the target
 qc.x(1)
 
 //oracle
 qc.h(2)
 qc.ccx(0, 1, 2)
 qc.h(2)
-
+//removing the disguise
 qc.x(1)
-//amplitude amplification
+
+
+
+//amplitude amplification , flip of states around the average making //the target states probabilty high
 qc.h([0, 1, 2])
 qc.x([0, 1, 2])
 
